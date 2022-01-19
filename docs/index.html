@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Student Database</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-12 " style="text-align: center;">
+          <h1 style="background-color: black;color: white; ">Student DataBase</h1>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col col-12 col-sm-4 col-md-4 col-lg-4" style="text-align: center;">
+            <button type="button" class="btn btn-primary btn-lg " onclick="App.displayCreateSudent()" >Create New Student</button>
+        </div>
+        <div class="col col-12 col-sm-4 col-md-4 col-lg-4" style="text-align: center;">
+            <button type="button" class="btn btn-primary btn-lg " style="width: 250px;" onclick="App.displayViewSudent()" >View</button>
+        </div>
+        <div class="col col-12 col-sm-4 col-md-4 col-lg-4" style="text-align: center;">
+          <button type="button" class="btn btn-primary btn-lg " style="width: 250px;" onclick="App.searchSudent()" >Search</button>
+      </div>           
+      </div>
+      <br>
+      <br><br>
+      <!-- create new stude page -->
+      <div class="row" style="display: none;" id="createstudentpage">
+        <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+        <div class="col col-12 col-sm-8 col-lg-8 col-md-8">
+          <table class="table">
+            <tr>
+              <td><h4 style="color: blue;">Name</h4></td>
+              <td><input type="text" class="form-control" id="stName"></td>
+            </tr>
+            <tr>
+              <td><h4 style="color: blue;">Class</h4></td>
+              <td><input type="text" class="form-control" id="stClass"></td>
+            </tr>
+            <tr>
+              <td><h4 style="color: blue;">College</h4></td>
+              <td><input type="text" class="form-control" id="stCollege"></td>
+            </tr>
+            <tr>
+              <td><h4 style="color: blue;">Phone</h4></td>
+              <td><input type="text" class="form-control" id="stPhone"></td>
+            </tr>
+            <tr>
+              <td><h4 style="color: blue;">Email</h4></td>
+              <td><input type="text" class="form-control" id=stEmail></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: center;"><button type="button" class="btn btn-primary btn-lg" onclick="App.addNewStudent()">ADD</button></td>
+            </tr>
+
+          </table>
+        </div>
+        <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+      </div>
+
+      <!-- dispaly student page -->
+      <div class="row" style="display: none;" id="displaystudent">
+        <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+        <div class="col col-12 col-sm-8 col-lg-8 col-md-8">
+          <table class="table">
+           <thead>
+             <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>Class</th>
+               <th>Colege</th>
+               <th>Phone </th>
+               <th>Email</th>
+             </tr>
+           </thead>
+           <tbody id="studentinfo">
+
+           </tbody>
+          </table>
+        </div>
+        <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+      </div>
+
+       <!-- search studentpage -->
+       <div class="row" style="display: none;" id="searchstudentpage">
+        <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+        <div class="col col-12 col-sm-8 col-lg-8 col-md-8">
+          <table class="table">
+            <tr>
+              <td>Enter Student ID</td>
+              <td><input type="number" class="form-control" id="stId"></td>
+              <td><button type="button" class="btn btn-info" onclick="App.searchById()">Search</button></td>
+            </tr>
+          </table>
+          <table class="table">
+           <thead>
+             <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>Class</th>
+               <th>Colege</th>
+               <th>Phone </th>
+               <th>Email</th>
+             </tr>
+           </thead>
+           <tbody id="Searchstudentinfo">
+
+           </tbody>
+          </table>
+        </div>
+        <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+      </div>
+    </div>
+    
+
+  
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
